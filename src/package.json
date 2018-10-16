@@ -1,0 +1,21 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "SkipRope service frontend",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kolebnica/Frontend.git"
+  },
+  "author": "",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/Kolebnica/Frontend/issues"
+  },
+  "homepage": "https://github.com/Kolebnica/Frontend#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}

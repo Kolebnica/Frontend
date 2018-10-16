@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="sr-app">
+  <head>
+    <base href="/">
+  </head>
+  <body>
+    <content ng-view></content>
+
+    <noscript>
+      <p>This site needs javascript.</p>
+    </noscript>
+
+    <!-- angularJs and angular-route module -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+
+    <!-- angular routes -->
+    <script type="text/javascript" src="app.routes.js"></script>
+
+    <!-- controllers -->
+    <script type="text/javascript" src="components/main/main.ctrl.js"></script>
+
+    <!-- services -->
+    <!--script type="text/javascript" src="shared/services/main.service.js"></script-->
+
+    <!-- filters -->
+    <!--script type="text/javascript" src="shared/filters/example.filter.js"></script-->
+
+    <!-- directives -->
+    <!--script type="text/javascript" src="shared/directives/example.directive.js"></script-->
+
+  </body>
+</html>
