@@ -1,7 +1,7 @@
 (function() {
   /* global angular */
 
-  angular.module('sr-app', ['ngRoute']);
+  angular.module('skiprope', ['ngRoute']);
 
   function setup($routeProvider, $locationProvider) {
     $routeProvider
@@ -16,6 +16,6 @@
   }
 
   angular
-    .module('sr-app')
+    .module('skiprope')
     .config(['$routeProvider', '$locationProvider', setup]);
 })();

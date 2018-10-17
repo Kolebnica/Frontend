@@ -5,7 +5,7 @@ var mainCtrl = function($scope){
 mainCtrl.$inject = ['$scope'];
 
 angular
-    .module('sr-app')
+    .module('skiprope')
     .controller('mainCtrl', mainCtrl);
 })();
  

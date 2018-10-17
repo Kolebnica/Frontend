@@ -1,0 +1,31 @@
+#sr-navbar{
+  opacity:0.9;
+  width:100%;
+  position: fixed;
+  padding-left:9%;
+  padding-right:9%;
+}
+
+#slogan{
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  color: #d5224a;
+}
+
+#play{
+  padding-bottom:10px;
+  width:7%;
+  filter: blur(0.5px);
+}
+
+.bg-image-full {
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  height: 550px;
+  text-align: center;
+  padding-top: 230px;
+}

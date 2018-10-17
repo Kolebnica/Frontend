@@ -1,7 +1,15 @@
 <!DOCTYPE html>
-<html ng-app="sr-app">
+<html ng-app="skiprope">
   <head>
     <base href="/">
+
+    <!-- CSS Styles -->
+    <link rel="stylesheet" href="public/css/bootstrap.css">
+    <link rel="stylesheet" href="public/css/style.css">
+
+    <!-- Meta data for full width image -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
   </head>
   <body>
     <content ng-view></content>
@@ -19,7 +27,7 @@
 
     <!-- controllers -->
     <script type="text/javascript" src="components/main/main.ctrl.js"></script>
-
+    
     <!-- services -->
     <!--script type="text/javascript" src="shared/services/main.service.js"></script-->
 
@@ -27,7 +35,10 @@
     <!--script type="text/javascript" src="shared/filters/example.filter.js"></script-->
 
     <!-- directives -->
-    <!--script type="text/javascript" src="shared/directives/example.directive.js"></script-->
+    <script type="text/javascript" src="shared/directives/navbar/navbar.directive.js"></script>
+
+    <!-- directive controllers -->
+    <script type="text/javascript" src="shared/directives/navbar/navbar.ctrl.js"></script>
 
   </body>
 </html>
