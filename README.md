@@ -18,3 +18,7 @@ For using nodemon:
 
 1. Build Docker image with `docker build -t kolebnica/frontend . `
 2. Run Docker image `docker run --name skiprope-frontend --publish 3000:3000 --detach kolebnica/frontend`
+
+## Test login  
+username: `user`  
+password: `123`  
