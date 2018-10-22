@@ -1,3 +1,16 @@
+sudo: required
+
 language: node_js
 node_js:
  - "node"
+
+services:
+ - docker
+
+script:
+ - npm install
+ - docker build -t skiprope/frontend .
+ 
+after_success:
+ - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+ - docker push skiprope/frontend
