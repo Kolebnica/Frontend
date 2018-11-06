@@ -13,14 +13,26 @@
       </li>
       -->
     </ul>
-    <ul class="navbar-nav mr-right">
-      <li class="nav-item active">
-        <a class="nav-link" href="/login">Login</a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="/register">Register</a>
-      </li>
-    </ul>
+    <div ng-show="vm.flag">
+      <ul class="navbar-nav mr-right">
+        <li class="nav-item active">
+          <a class="nav-link" href="/login">Login</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/register">Register</a>
+        </li>
+      </ul>
+    </div>
+    <div ng-show="!vm.flag">
+      <ul class="navbar-nav mr-right">
+        <li class="nav-item active nav-name">
+          {{vm.name}} {{vm.surname}}
+        </li>
+        <li class="nav-item active">
+          <img src="../public/img/profile_icon.png" alt="profile_picture" width="35" height="35">
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
 
