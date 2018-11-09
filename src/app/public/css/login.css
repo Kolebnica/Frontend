@@ -2990,7 +2990,7 @@
 
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
-
+/*
 @font-face {
   font-family: Raleway-Regular;
   src: url('../fonts/raleway/Raleway-Regular.ttf'); 
@@ -3010,7 +3010,7 @@
   font-family: Raleway-Bold;
   src: url('../fonts/raleway/Raleway-Bold.ttf'); 
 }
-
+*/
 /*//////////////////////////////////////////////////////////////////
 [ RESTYLE TAG ]*/
 
@@ -3027,7 +3027,7 @@ body, html {
 
 /*---------------------------------------------*/
 a {
-	font-family: Raleway-Regular;
+	/*font-family: Raleway-Regular;*/
 	font-size: 14px;
 	line-height: 1.7;
 	color: #666666;
@@ -3053,7 +3053,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 p {
-	font-family: Raleway-Regular;
+	/*font-family: Raleway-Regular;*/
 	font-size: 14px;
 	line-height: 1.7;
 	color: #666666;
@@ -3125,7 +3125,7 @@ iframe {
 /*//////////////////////////////////////////////////////////////////
 [ Utility ]*/
 .txt1 {
-  font-family: Raleway-SemiBold;
+  /*font-family: Raleway-SemiBold;*/
   font-size: 13px;
   color: #555555;
   line-height: 1.4;
@@ -3133,14 +3133,14 @@ iframe {
 }
 
 .txt2 {
-  font-family: Raleway-Regular;
+  /*font-family: Raleway-Regular;*/
   font-size: 13px;
   color: #999999;
   line-height: 1.4;
 }
 
 .txt3 {
-  font-family: Raleway-Regular;
+  /*font-family: Raleway-Regular;*/
   font-size: 13px;
   color: #555555;
   line-height: 1.4;
@@ -3192,7 +3192,7 @@ iframe {
 }
 
 .login100-form-title {
-  font-family: Raleway-Medium;
+  /*font-family: Raleway-Medium;*/
   font-size: 30px;
   color: #555555;
   line-height: 1.2;
@@ -3219,7 +3219,7 @@ iframe {
 
 /*---------------------------------------------*/
 .input100 {
-  font-family: Raleway-Medium;
+  /*font-family: Raleway-Medium;*/
   color: #555555;
   line-height: 1.2;
   font-size: 18px;
@@ -3320,7 +3320,7 @@ iframe {
 }
 
 .label-checkbox100 {
-  font-family: Raleway-Regular;
+  /*font-family: Raleway-Regular;*/
   font-size: 13px;
   color: #999999;
   line-height: 1.4;
@@ -3378,7 +3378,7 @@ iframe {
 }
 
 .login100-form-btn {
-  font-family: Raleway-Bold;
+  /*font-family: Raleway-Bold;*/
   font-size: 16px;
   color: #fff;
   line-height: 1.2;
@@ -3435,7 +3435,7 @@ iframe {
   right: 12px;
   pointer-events: none;
 
-  font-family: Raleway-Medium;
+  /*font-family: Raleway-Medium;*/
   color: #c80000;
   font-size: 14px;
   line-height: 1.4;
