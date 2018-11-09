@@ -1,10 +1,33 @@
-#sr-navbar{
-  opacity:0.9;
-  width:100%;
-  position: fixed;
-  padding-left:9%;
-  padding-right:9%;
+/* NAVBAR */
+
+#sr-navbar {
+  z-index: 100;
+  opacity:0.95;
+  padding-left: 9%;
+  padding-right: 9%;
+  height: 82px;
 }
+
+.nav-name{
+  vertical-align: middle;
+  line-height: 3em;
+}
+
+/* FORMS */
+
+form label {
+  font-size: 1em;
+  color: #555;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+form .form-control {
+  font-size: 1.1em;
+  margin-bottom: 6px;
+}
+
+/* ***** */
 
 #slogan{
   text-align: center;
@@ -27,14 +50,4 @@
   height: 550px;
   text-align: center;
   padding-top: 200px;
-}
-
-.register{
-  margin-top:100px;
-  margin-bottom:100px;
-}
-
-.nav-name{
-  vertical-align: middle;
-  line-height: 3em;
 }

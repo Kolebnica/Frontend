@@ -1,38 +1,42 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sr-navbar">
-  <a class="navbar-brand" href="/">SkipRope</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<div style="height:82px;">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sr-navbar">
 
-  <div class="collapse navbar-collapse" id="navbarColor01">
-    
-    <ul class="navbar-nav mr-auto">
-      <!--
-      <li class="nav-item active">
-        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-      </li>
-      -->
-    </ul>
-    <div ng-show="vm.flag">
-      <ul class="navbar-nav mr-right">
+    <a class="navbar-brand" href="/">SKIPROPE</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav mr-right" ng-show="vm.flag">
+        <li class="nav-item">
           <a class="nav-link" href="/login">Login</a>
         </li>
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link" href="/register">Register</a>
         </li>
       </ul>
-    </div>
-    <div ng-show="!vm.flag">
-      <ul class="navbar-nav mr-right">
-        <li class="nav-item active nav-name">
-          {{vm.name}} {{vm.surname}}
+
+      <ul class="navbar-nav mr-right" ng-show="!vm.flag">
+        <li class="nav-item">
+          <a class="nav-link" href="/user">
+            {{vm.name}} {{vm.surname}}
+            <img style="height: 34px;" class="ml-3 d-inline-block" src="../public/img/profile_icon.png" alt="profile picture">
+          </a>
         </li>
-        <li class="nav-item active">
-          <img src="../public/img/profile_icon.png" alt="profile_picture" width="35" height="35">
+        <li class="nav-item">
+          <a href="" class="nav-link" style="line-height: 34px;" ng-click="vm.logout()">
+            Logout
+          </a>
         </li>
       </ul>
-    </div>
-  </div>
-</nav>
 
+    </div>
+  </nav>
+</div>

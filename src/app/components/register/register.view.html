@@ -1,54 +1,47 @@
 <!-- Navigation -->
 <sr-navbar></sr-navbar>
 
-<div class="limiter">
-  <div class="container-login100">
-    <div class="wrap-login100 p-l-85 p-r-85 p-t-55 p-b-55 register">
-      <form class="login100-form validate-form flex-sb flex-w">
-        <span class="login100-form-title p-b-32">
-          Create Account
-        </span>
+<div class="container-fluid" style="background: url('../public/img/funky-lines.png'); height: 100vh;">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-8">
+        <div class="m-5 p-5" style="background: white; border: 1px solid rgba(0,0,0,0.1); border-radius: 25px;">
 
-        <span class="txt1 p-b-11">
-          Username
-        </span>
-        <div class="wrap-input100 validate-input m-b-36" data-validate = "Username is required">
-          <input class="input100" type="text" name="username" >
-          <span class="focus-input100"></span>
+          <h2>
+            <img src="../public/img/icons/music-folder.png" alt="" style="height: 84px;">
+            Create account
+          </h2>
+          <span style="font-size:1.2em; color: rgb(26,26,26); display:block;">Personalize your SkipRope experience!</span>
+
+          <div class="mb-4"></div>
+
+          <form onsubmit="false" ng-submit="vm.submitLogin()">
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" class="form-control" id="username" placeholder="" ng-model="vm.username">
+              <small class="form-text text-muted"></small>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" placeholder="" ng-model="vm.email">
+              <small class="form-text text-muted"></small>
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password" placeholder="" ng-model="vm.password">
+            </div>
+            <div class="form-group">
+              <label for="password2">Repeat password</label>
+              <input type="password" class="form-control" id="password2" placeholder="" ng-model="vm.password2">
+            </div>
+
+            <button type="button" class="btn btn-primary px-5 py-3" style="border-radius: 35px;">Register</button>
+          </form>
+
         </div>
-
-        <span class="txt1 p-b-11">
-          Email
-        </span>
-        <div class="wrap-input100 validate-input m-b-36" data-validate = "Email is required">
-          <input class="input100" type="text" name="email" >
-          <span class="focus-input100"></span>
-        </div>
-
-        <span class="txt1 p-b-11">
-          Password
-        </span>
-        <div class="wrap-input100 validate-input m-b-36" data-validate = "Password is required">
-          <input class="input100" type="password" name="pass" >
-          <span class="focus-input100"></span>
-        </div>  
-        
-        <span class="txt1 p-b-11">
-          Repeat password
-        </span>
-        <div class="wrap-input100 validate-input m-b-12" data-validate = "Password is required">
-          <input class="input100" type="password" name="pass-rep" >
-          <span class="focus-input100"></span>
-        </div>
-
-        <div class="container-login100-form-btn">
-          <button class="login100-form-btn">
-            Register
-          </button>
-        </div>
-
-      </form>
+      </div>
+      <div class="col-sm-2"></div>
     </div>
   </div>
 </div>
-
