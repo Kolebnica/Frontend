@@ -1,14 +1,15 @@
 (function() {
 
-  var navbarCtrl = function() {
+  var navbarCtrl = function($window) {
     var vm = this;
 
-    vm.flag = false;
-    vm.name = "Blažka";
-    vm.surname = "Blatnik";
+    vm.logedIn = $window.localStorage['logedIn'];
+    vm.name = $window.localStorage['name'];
+    vm.surname = $window.localStorage['surname'];
 
     vm.logout = function() {
-      vm.flag = true;
+      vm.logedIn = false;
+      $window.localStorage['logedIn'] = false;
     }
   };
 

@@ -14,7 +14,7 @@
         </li>
       </ul>
 
-      <ul class="navbar-nav mr-right" ng-show="vm.flag">
+      <ul class="navbar-nav mr-right" ng-show="!vm.logedIn">
         <li class="nav-item">
           <a class="nav-link" href="/login">Login</a>
         </li>
@@ -23,7 +23,7 @@
         </li>
       </ul>
 
-      <ul class="navbar-nav mr-right" ng-show="!vm.flag">
+      <ul class="navbar-nav mr-right" ng-show="vm.logedIn">
         <li class="nav-item">
           <a class="nav-link" href="/user">
             {{vm.name}} {{vm.surname}}

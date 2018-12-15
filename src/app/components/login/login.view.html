@@ -13,7 +13,7 @@
             Login to SkipRope
           </h2>
 
-          <form onsubmit="false" ng-submit="vm.submitLogin()">
+          <form ng-submit="vm.submitLogin()">
             <div class="form-group">
               <label for="username">Username</label>
               <input type="text" class="form-control" id="username" placeholder="" ng-model="vm.username">
@@ -23,7 +23,7 @@
               <label for="password">Password</label>
               <input type="password" class="form-control" id="password" placeholder="" ng-model="vm.password">
             </div>
-            <button type="button" class="btn btn-primary px-5 py-3" style="border-radius: 35px;">Login</button>
+            <button type="submit" class="btn btn-primary px-5 py-3" style="border-radius: 35px;">Login</button>
           </form>
 
         </div>
