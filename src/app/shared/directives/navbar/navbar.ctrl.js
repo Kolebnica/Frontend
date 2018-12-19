@@ -7,6 +7,8 @@
     vm.name = $window.localStorage['name'];
     vm.surname = $window.localStorage['surname'];
 
+    vm.profilePictureNum = Math.floor(Math.random() * Math.floor(10))+1;
+
     vm.logout = function() {
       vm.logedIn = false;
       $window.localStorage['logedIn'] = false;

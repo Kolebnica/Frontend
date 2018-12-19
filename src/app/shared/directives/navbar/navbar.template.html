@@ -26,12 +26,13 @@
       <ul class="navbar-nav mr-right" ng-show="vm.logedIn">
         <li class="nav-item">
           <a class="nav-link" href="/user">
-            {{vm.name}} {{vm.surname}}
-            <img style="height: 34px;" class="ml-3 d-inline-block" src="../public/img/profile_icon.png" alt="profile picture">
+            {{ vm.name }} {{ vm.surname }}
+            <img class="ml-3 d-inline-block profile-picture" src="../public/img/profiles/{{ vm.profilePictureNum }}.png" alt="avatar">
           </a>
+          
         </li>
         <li class="nav-item">
-          <a href="" class="nav-link" style="line-height: 34px;" ng-click="vm.logout()">
+          <a href="" class="nav-link" ng-click="vm.logout()">
             Logout
           </a>
         </li>
