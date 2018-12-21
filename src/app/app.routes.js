@@ -20,6 +20,11 @@
         controller: 'registerCtrl',
         controllerAs: 'vm'
       })
+      .when('/profile/:profileId', {
+        templateUrl: 'components/profile/profile.view.html',
+        controller: 'profileCtrl',
+        controllerAs: 'vm',
+      })
       .otherwise({redirectTo: '/'});
 
     $locationProvider.html5Mode(true);
