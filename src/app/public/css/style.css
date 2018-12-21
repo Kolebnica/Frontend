@@ -14,9 +14,19 @@
 
 #sr-navbar .nav-item a.nav-link img.profile-picture {
   height: 36px;
+  width: 36px;
   padding: 8px;
   background-color: #f5f5f5;
   border-radius: 18px;
+}
+
+/* LIBRARY */
+.library .tile-list img {
+  padding: 15%; 
+  width: 100%; 
+  height: auto; 
+  border: 1px solid rgba(0,0,0,0.1); 
+  border-radius: 6px;
 }
 
 /* FORMS */

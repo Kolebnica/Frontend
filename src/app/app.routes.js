@@ -25,6 +25,11 @@
         controller: 'profileCtrl',
         controllerAs: 'vm',
       })
+      .when('/library', {
+        templateUrl: 'components/library/library.view.html',
+        controller: 'libraryCtrl',
+        controllerAs: 'vm',
+      })
       .otherwise({redirectTo: '/'});
 
     $locationProvider.html5Mode(true);
