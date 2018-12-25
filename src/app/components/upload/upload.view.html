@@ -1,0 +1,34 @@
+<!-- Navigation -->
+<sr-navbar></sr-navbar>
+
+<div class="container-fluid" style="background: url('../public/img/funky-lines.png'); height: 100%;">
+  <div class="container" style="background: white; border-left: 1px solid rgba(0,0,0,0.1); border-right: 1px solid rgba(0,0,0,0.1); height: 100%">
+    <div class="row p-3" style="border-bottom: 1px dashed rgba(0,0,0,0.1);">
+      <div class="col-sm-6 pb-1 mt-auto" style="padding-top:20px">
+        <h3>Upload new song</h3>
+      </div>
+    </div>
+
+    <div class="row p-3">
+      <div class="btn-group pull-right">
+          <label for="file-input" class="btn btn-primary px-3 py-2" style="border-radius: 35px;" flow-btn>
+              Browse
+              <input id="file-input" type="file" on-read-file="vm.processData($fileContent)" style="visibility: hidden; position: absolute;">
+          </label>
+      </div>
+    </div>
+
+    <div class="row p-3" style="height: 100%;">
+      <form ng-submit="vm.upload()">
+        <div class="form-group">
+          <label for="title">Song title</label>
+          <input type="text" class="form-control" id="title" placeholder="" ng-model="vm.title">
+          <small class="form-text text-muted"></small>
+        </div>
+        <button type="submit" class="btn btn-primary px-5 py-3" style="border-radius: 35px;">Upload</button>
+      </form>
+    </div>
+
+    
+  </div>
+</div>

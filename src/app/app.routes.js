@@ -25,6 +25,11 @@
         controller: 'profileCtrl',
         controllerAs: 'vm',
       })
+      .when('/upload', {
+        templateUrl: 'components/upload/upload.view.html',
+        controller: 'uploadCtrl',
+        controllerAs: 'vm',
+      })
       .otherwise({redirectTo: '/'});
 
     $locationProvider.html5Mode(true);

@@ -7,9 +7,14 @@
       <div class="col-sm-3 pb-1 mt-auto" style="text-align: center;">
         <img src="../public/img/profiles/{{ vm.user.id % 10 }}.png" alt="" style="height: 85px; padding: 10px;">
       </div>
-      <div class="col-sm-9 pb-1 mt-auto">
+      <div class="col-sm-6 pb-1 mt-auto">
         <h3>{{ vm.user.name }} {{ vm.user.surname }}</h3>
         <h5><small>{{ vm.user.username }}</small></h5>
+      </div>
+      <div class="col-sm-3 pb-1 mt-auto">
+        <a class="nav-link" href="/upload">
+          <img class="ml-3 d-inline-block profile-picture pull-right" src="../public/img/upload.png" alt="avatar" style="width:30%;">
+        </a>
       </div>
     </div>
     <div class="row p-3" style="height: 100%; min-height: 100vh;">
