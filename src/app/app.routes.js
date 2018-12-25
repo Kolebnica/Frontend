@@ -23,12 +23,16 @@
       .when('/profile/:profileId', {
         templateUrl: 'components/profile/profile.view.html',
         controller: 'profileCtrl',
-        controllerAs: 'vm',
+        controllerAs: 'vm'
       })
       .when('/upload', {
         templateUrl: 'components/upload/upload.view.html',
-        controller: 'uploadCtrl',
-        controllerAs: 'vm',
+        controller: 'uploadCtrl'
+      })
+      .when('/library', {
+        templateUrl: 'components/library/library.view.html',
+        controller: 'libraryCtrl',
+        controllerAs: 'vm'
       })
       .otherwise({redirectTo: '/'});
 
