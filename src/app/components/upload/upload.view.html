@@ -13,16 +13,18 @@
       <div class="btn-group pull-right">
           <label for="file-input" class="btn btn-primary px-3 py-2" style="border-radius: 35px;" flow-btn>
               Browse
-              <input id="file-input" type="file" on-read-file="vm.processData($fileContent)" style="visibility: hidden; position: absolute;">
+              <input id="file-input" accept = ".mp3" type="file" on-read-file="vm.processData($fileContent)" style="visibility: hidden; position: absolute;">
           </label>
       </div>
     </div>
+
+    <button ng-click="vm.playMusic()" class="btn btn-primary px-5 py-3" style="border-radius: 35px;">Play</button>
 
     <div class="row p-3" style="height: 100%;">
       <form ng-submit="vm.upload()">
         <div class="form-group">
           <label for="title">Song title</label>
-          <input type="text" class="form-control" id="title" placeholder="" ng-model="vm.title">
+          <input type="text" class="form-control" id="title" placeholder="Song title" ng-model="vm.title">
           <small class="form-text text-muted"></small>
         </div>
         <button type="submit" class="btn btn-primary px-5 py-3" style="border-radius: 35px;">Upload</button>

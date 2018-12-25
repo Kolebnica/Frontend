@@ -27,7 +27,8 @@
       })
       .when('/upload', {
         templateUrl: 'components/upload/upload.view.html',
-        controller: 'uploadCtrl'
+        controller: 'uploadCtrl',
+        controllerAs: 'vm'
       })
       .when('/library', {
         templateUrl: 'components/library/library.view.html',
