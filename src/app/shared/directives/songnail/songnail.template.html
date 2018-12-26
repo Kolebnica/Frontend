@@ -18,7 +18,7 @@
     <div style="height:100%; display:flex;justify-content:center;align-items:center;">
         <img src="../public/img/icons/star_yes.png" style="height: 42px;" alt="favorite">
         <div class="mx-3" style="height: 100%; border-right: 1px solid rgba(0,0,0,0.1);"></div>
-        <img src="../public/img/icons/play.png" class="play-button" style="height: 42px;cursor: pointer;" alt="play" ng-click="vm.playMusic()">
+        <img src="../public/img/icons/play.png" ng-class="!vm.enablePause? 'play-button' : ''" style="height: 42px;" alt="play" ng-click="vm.playMusic()">
         <img src="../public/img/icons/pause.png" ng-class="vm.enablePause? 'pause-button' : ''" style="height: 42px;" alt="pause" ng-click="vm.pauseMusic()">
     </div>
   </div>
