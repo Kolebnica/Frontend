@@ -8,23 +8,19 @@
 
 
 <div class="text-center container mt-3">
-  <sr-songnail></sr-songnail>
-  <sr-songnail></sr-songnail>
-  <sr-songnail></sr-songnail>
-  <sr-songnail></sr-songnail>
-  <sr-songnail></sr-songnail>
-  <sr-songnail></sr-songnail>
-  <sr-songnail></sr-songnail>
-  <sr-songnail></sr-songnail>
-  <sr-songnail></sr-songnail>
-  <sr-songnail></sr-songnail>
-  <sr-songnail></sr-songnail>
-  <sr-songnail></sr-songnail>
-  <sr-songnail></sr-songnail>
-  <sr-songnail></sr-songnail>
-  <sr-songnail></sr-songnail>
-  <sr-songnail></sr-songnail>
+  <div ng-repeat="song in vm.songList">
+    <sr-songnail title="song.title" streamid="song.streamId" album="song.album" artist="song.artist"></sr-songnail>
+  </div>
 </div>
 
+<div class="text-center container mt-3">
+    <div ng-if="vm.songList == undefined">
+        <br />Loading...
+      </div>
+    
+    <div ng-if="vm.songList.length == 0">
+      <br />Huh? No songs found. Try uploading some
+    </div>
+</div>
 
 <div style="height:500px"></div>

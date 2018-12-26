@@ -67,3 +67,19 @@ form .form-control {
   text-align: center;
   padding-top: 200px;
 }
+
+.play-button{
+  transition: all .2s ease-in-out;
+}
+
+.play-button:hover{
+  transform: scale(1.3);
+}
+
+.pause-button{
+  transition: all .2s ease-in-out;
+}
+
+.pause-button:hover{
+  transform: scale(1.3);
+}

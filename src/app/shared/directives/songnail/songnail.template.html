@@ -3,11 +3,11 @@
     <img src="../public/img/icons/music.png" style="height:85px" alt="songnail_picture">
   </div>
   <div class="col-sm-2 text-left p-3" style="height: 100%;">
-    <span style="font-size: 1.3em;font-weight: bold">Ime pesmi</span>
+    <span style="font-size: 1.3em;font-weight: bold">{{vm.songTitle}}</span>
     <br/>
-    <span style="font-size: 1em">Album</span>
+    <span style="font-size: 1em">{{vm.songAlbum}}</span>
     <br/>
-    <span style="font-size: 1em">Izvajalec pesmi</span>
+    <span style="font-size: 1em">{{vm.songArtist}}</span>
   </div>
   <div class="col-sm-5">
     <div style="height:100%; display:flex;justify-content:center;align-items:center;">
@@ -18,8 +18,8 @@
     <div style="height:100%; display:flex;justify-content:center;align-items:center;">
         <img src="../public/img/icons/star_yes.png" style="height: 42px;" alt="favorite">
         <div class="mx-3" style="height: 100%; border-right: 1px solid rgba(0,0,0,0.1);"></div>
-        <img src="../public/img/icons/play.png" style="height: 42px;" alt="play">
-        <img src="../public/img/icons/pause.png" style="height: 42px;" alt="play">
+        <img src="../public/img/icons/play.png" class="play-button" style="height: 42px;cursor: pointer;" alt="play" ng-click="vm.playMusic()">
+        <img src="../public/img/icons/pause.png" ng-class="vm.enablePause? 'pause-button' : ''" style="height: 42px;" alt="pause" ng-click="vm.pauseMusic()">
     </div>
   </div>
 </div>

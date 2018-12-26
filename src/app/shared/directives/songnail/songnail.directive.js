@@ -4,8 +4,10 @@
     return {
       restrict: 'EC',
       scope: {
-       state: "=",
-       filter: "="
+       title: '=',
+       streamid: '=',
+       album: '=',
+       artist: '='
       },
       controller: "songnailCtrl",
       controllerAs:'vm',

@@ -18,11 +18,16 @@
       return $http.get(songServiceApiBasePath + '/api/stream/' + streamId)
     }
 
+    var getSongList = function(){
+      return $http.get(songServiceApiBasePath + '/api/song/list')
+    }
+
 
     return {
       uploadStream: uploadStream,
       postSong: postSong,
-      getStream: getStream
+      getStream: getStream,
+      getSongList: getSongList
     };
   };
 
