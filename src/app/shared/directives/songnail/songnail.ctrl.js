@@ -13,6 +13,26 @@
     var startedAt;
     var pausedAt;
     var paused = false;
+    var duration = 0;
+    var byteArray;
+    var loaded = false;
+    vm.progress = "100%";
+    var intervalId;
+
+    function updateProgressBar(){
+      intervalId = setInterval(function(){
+        var passed = (Date.now() - startedAt)/1000;
+
+        if(duration <= passed){
+          vm.progress = "100%"
+          $scope.$apply()
+          return;
+        }
+
+        vm.progress = ((passed)/duration)*100+"%"
+        $scope.$apply()
+      }, 100);
+    }
 
 		function init() {
       if (!window.AudioContext) {
@@ -27,33 +47,54 @@
     }
     
     vm.playMusic = function () {
-      
-			songService.getStream($scope.streamid).then(
-				function success(response){
-          vm.enablePause = true;
-					byteArray = response.data
-					var arrayBuffer = new ArrayBuffer(byteArray.length);
-					var bufferView = new Uint8Array(arrayBuffer);
-					for (i = 0; i < byteArray.length; i++) {
-						bufferView[i] = byteArray[i];
-					}
+      vm.progress = "0%"
+      vm.enablePause = true;
+      if(!loaded){
+        songService.getStream($scope.streamid).then(
+          function success(response){
+            byteArray = response.data
+            loaded = true; 
 
-					context.decodeAudioData(arrayBuffer, function(buffer) {
-              buf = buffer;
-							play();
-					});
-				},
-				function error(error){
-					console.log(error);
-				}
-			)
+            var arrayBuffer = new ArrayBuffer(byteArray.length);
+            var bufferView = new Uint8Array(arrayBuffer);
+            for (i = 0; i < byteArray.length; i++) {
+              bufferView[i] = byteArray[i];
+            }
+
+            updateProgressBar()
+
+            context.decodeAudioData(arrayBuffer, function(buffer) {
+                buf = buffer;
+                play();
+            });
+          },
+          function error(error){
+            console.log(error);
+          }
+        )
+      }
+      else{
+        var arrayBuffer = new ArrayBuffer(byteArray.length);
+        var bufferView = new Uint8Array(arrayBuffer);
+        for (i = 0; i < byteArray.length; i++) {
+          bufferView[i] = byteArray[i];
+        }
+
+        updateProgressBar()
+
+        context.decodeAudioData(arrayBuffer, function(buffer) {
+            buf = buffer;
+            play();
+        });
+      }
 		}
 
 		// Play the loaded file
 		function play() {
 				// Create a source node from the buffer
-				source = context.createBufferSource();
+        source = context.createBufferSource();
 				source.buffer = buf;
+        duration = buf.duration;
 				// Connect to the final output node (the speakers)
 				source.connect(context.destination);
         // Play immediately
@@ -70,6 +111,7 @@
     }
     
     vm.pauseMusic = function() {
+      clearInterval(intervalId);
       source.stop(0);
       pausedAt = Date.now() - startedAt;
       paused = true;

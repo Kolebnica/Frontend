@@ -10,6 +10,7 @@
 				vm.songList = response.data;
 			},
 			function error(error){
+				vm.songList = []
 				console.log(error);
 	})
 		

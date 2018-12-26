@@ -1,6 +1,6 @@
 (function() {
 
-  var navbarCtrl = function($window) {
+  var navbarCtrl = function($window, $location) {
     var vm = this;
 
     vm.logedIn = $window.localStorage['logedIn'] == "true";
@@ -13,6 +13,7 @@
     vm.logout = function() {
       vm.logedIn = false;
       $window.localStorage['logedIn'] = false;
+      $location.path("/");
     }
   };
 

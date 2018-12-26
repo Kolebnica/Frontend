@@ -10,6 +10,7 @@ var loginCtrl = function($scope, $location, loginService, $window){
                 $window.localStorage['logedIn'] = true;
                 $window.localStorage['name'] = response.data.name;
                 $window.localStorage['surname'] = response.data.surname;
+                $window.localStorage['userId'] = response.data.id;
                 $location.path("/");
             },
             function error(error){
