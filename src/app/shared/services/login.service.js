@@ -1,5 +1,4 @@
 (function() {
-
   var loginService = function($window, $http) {
 
     var loginUser = function(username, password) {

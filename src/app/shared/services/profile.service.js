@@ -1,5 +1,4 @@
 (function() {
-  /* global profileServiceApiBasePath */
   var profileService = function($http) {
 
     var getProfile = function(id) {

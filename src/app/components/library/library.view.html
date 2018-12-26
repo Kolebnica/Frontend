@@ -8,26 +8,44 @@
     
     <h2 class="pl-3 pt-3">Artists</h2>
     <div class="row p-3" style="border-bottom: 1px dashed rgba(0,0,0,0.1);">     
-        <div class="col-md-2 p-2 tile-list" ng-repeat="artist in vm.artists">
+        <div class="col-md-4 p-2 tile-list" ng-repeat="artist in vm.artists">
           <a href="/artist/{{ artist.id }}">
-            <img src="/public/img/icons/music-folder.png">
+            <img src="/public/img/icons/microphone.png">
+            {{ artist.creativeName }}
+          </a>
+        </div>
+        <div class="col-md-4 p-2 tile-list">
+          <a href="/artist/new">
+            <img src="/public/img/icons/plus.png">
+            Add new artist...
           </a>
         </div>
     </div>
     
     <h2 class="pl-3 pt-3">Albums</h2>
     <div class="row p-3" style="border-bottom: 1px dashed rgba(0,0,0,0.1);">     
-      <div class="col-md-2 p-2 tile-list" ng-repeat="album in vm.albums">
+      <div class="col-md-4 p-2 tile-list" ng-repeat="album in vm.albums">
         <a href="/album/{{ album.id }}">
           <img src="/public/img/icons/music-folder.png">
+          {{ album.title }}
+        </a>
+      </div>
+      <div class="col-md-4 p-2 tile-list">
+        <a href="/album/new">
+          <img src="/public/img/icons/plus.png">
+          Add new album...
         </a>
       </div>
     </div>
 
     <h2 class="pl-3 pt-3">Songs</h2>
     <div class="row p-3" style="border-bottom: 1px dashed rgba(0,0,0,0.1);">
-      todo
-
+      <div class="col-md-4 p-2 tile-list" ng-repeat="song in vm.songs">
+        <a href="#">
+          <img src="/public/img/icons/music-note.png">
+          {{ song.title }}
+        </a>
+      </div>
     </div>
 
   </div>

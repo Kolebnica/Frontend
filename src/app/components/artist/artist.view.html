@@ -1,0 +1,72 @@
+<!-- Navigation -->
+<sr-navbar></sr-navbar>
+
+<div class="container-fluid" style="background: url('/public/img/funky-lines.png'); height: 100%;">
+  <div class="container library" style="background: white; border-left: 1px solid rgba(0,0,0,0.1); border-right: 1px solid rgba(0,0,0,0.1); min-height: 100vh; height: 100%">
+
+    <div class="row p-3" style="border-bottom: 1px dashed rgba(0,0,0,0.1);">
+      <div class="col-sm-3 pb-1 mt-auto" style="text-align: center;">
+        <img src="/public/img/icons/microphone.png" alt="" style="height: 85px; padding: 10px;">
+      </div>
+      <div class="col-sm-6 pb-1 mt-auto">
+        <h1>{{ vm.artist.creativeName }}</h1>
+        <h5><small>Artist</small></h5>
+      </div>
+    </div>
+
+    <h3 class="pl-3 pt-3">About artist</h3>
+
+    <div class="pl-3">
+      <div ng-show="vm.editMode">
+        <div class="p-3" style="border-bottom: 1px dashed rgba(0,0,0,0.1);">
+          <form>
+            <div class="form-group">
+              <label for="creativeName">Creative name</label>
+              <input type="text" class="form-control" id="creativeName" ng-model="vm.artist.creativeName" placeholder="">
+            </div>
+            <div class="form-group">
+              <label for="creativeName">Full name</label>
+              <input type="text" class="form-control" id="creativeName" ng-model="vm.artist.fullName" placeholder="">
+            </div>
+            <div class="btn-group">
+              <button type="button" class="btn btn-success" ng-click="vm.editMode=!vm.editMode">Submit</button>
+              <button type="button" class="btn btn-danger" ng-click="vm.editMode=!vm.editMode">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div ng-hide="vm.editMode" class="about">
+        <div><span class="attr-title">Creative name</span><div class="attr-content">{{ vm.artist.creativeName }}</div></div>
+        <div><span class="attr-title">Full name</span><div class="attr-content">{{ vm.artist.fullName }}</div></div>
+        <button class="btn btn-info mt-2" ng-click="vm.editMode = !vm.editMode">Edit</button>
+      </div>
+    </div>
+
+    <h2 class="pl-3 pt-3">Albums</h2>
+    <div class="row p-3" style="border-bottom: 1px dashed rgba(0,0,0,0.1);">
+      <div class="col-md-4 p-2 tile-list" ng-repeat="album in vm.albums">
+        <a href="/album/{{ album.id }}">
+          <img src="/public/img/icons/music-folder.png">
+          {{ album.title }}
+        </a>
+      </div>
+      <div class="col-md-4 p-2 tile-list">
+        <a href="/album/new">
+          <img src="/public/img/icons/plus.png">
+          Add new album...
+        </a>
+      </div>
+    </div>
+
+    <h2 class="pl-3 pt-3">Songs</h2>
+    <div class="row p-3" style="border-bottom: 1px dashed rgba(0,0,0,0.1);">
+      <div class="col-md-4 p-2 tile-list" ng-repeat="song in vm.songs">
+        <a href="#">
+          <img src="/public/img/icons/music-note.png">
+          {{ song.title }}
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>

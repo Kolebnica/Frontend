@@ -1,6 +1,4 @@
 (function() {
-  /* global userServiceApiBasePath */
-
   var userService = function($http) {
 
     var getUser = function(id) {

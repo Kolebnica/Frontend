@@ -20,14 +20,52 @@
   border-radius: 18px;
 }
 
-/* LIBRARY */
+/* LIBRARY, ARTIST, ALBUM pages */
+.library .tile-list a {
+  font-size: 1.1em;
+  display: block;
+  width: 100%;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 6px;
+  padding: 8px;
+}
+
+.library .tile-list a:hover {
+  text-decoration: none;
+  border: 1px solid rgba(0,0,0,0.75);
+}
+
 .library .tile-list img {
+  display: inline-block;
+  height: 36px;
+}
+
+.library .about > div {
+  width: 100%;
+}
+
+.library .about > div .attr-title {
+  display: block;
+  width: 100%;
+  font-size: 1em;
+  text-transform: uppercase;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.library .about > div .attr-content {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: rgb(26, 26, 26);
+}
+
+/*.library .tile-list img {
   padding: 15%; 
-  width: 100%; 
+  width: 100%;
   height: auto; 
   border: 1px solid rgba(0,0,0,0.1); 
   border-radius: 6px;
-}
+}*/
 
 /* FORMS */
 

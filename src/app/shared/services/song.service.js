@@ -15,22 +15,31 @@
         album_id: 0,
       };
       return $http.post(songServiceApiBasePath + '/api/song', song);
-    }
+    };
 
     var getStream = function(streamId){
-      return $http.get(songServiceApiBasePath + '/api/stream/' + streamId)
-    }
+      return $http.get(songServiceApiBasePath + '/api/stream/' + streamId);
+    };
 
     var getSongList = function(){
-      return $http.get(songServiceApiBasePath + '/api/song/list')
-    }
+      return $http.get(songServiceApiBasePath + '/api/song/list');
+    };
 
+    var getSongsByArtist = function (artistId) {
+      return $http.get(songServiceApiBasePath + '/api/song/artist/' + artistId);
+    };
+
+    var getSongsByUser = function (userId) {
+      return $http.get(songServiceApiBasePath + '/api/song/user/' + userId);
+    };
 
     return {
       uploadStream: uploadStream,
       postSong: postSong,
       getStream: getStream,
-      getSongList: getSongList
+      getSongList: getSongList,
+      getSongsByArtist: getSongsByArtist,
+      getSongsByUser: getSongsByUser
     };
   };
 

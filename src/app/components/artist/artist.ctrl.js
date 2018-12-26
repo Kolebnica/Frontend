@@ -1,24 +1,20 @@
 (function() {
-  var libraryCtrl = function(libraryService, songService) {
+  var artistCtrl = function($routeParams, libraryService, songService) {
     var vm = this;
-    
-    var userId = 2;
-    
-    if (userId == undefined) {
-      // TODO: redirect
-    }
 
-    libraryService.getArtistsByUser(userId).then(
+    var artistId = $routeParams.artistId;
+
+    libraryService.getArtist(artistId).then(
       function success(response) {
-        vm.artists = response.data;
-        console.log(vm.artists);
+        vm.artist = response.data;
+        console.log(vm.artist);
       },
       function error(error) {
         console.error(error);
       }
     );
 
-    libraryService.getAlbumsByUser(userId).then(
+    libraryService.getAlbumsByArtist(artistId).then(
       function success(response) {
         vm.albums = response.data;
         console.log(vm.albums);
@@ -28,7 +24,7 @@
       }
     );
 
-    songService.getSongsByUser(userId).then(
+    songService.getSongsByArtist(artistId).then(
       function success(response) {
         vm.songs = response.data;
         console.log(vm.songs);
@@ -42,7 +38,7 @@
       
   angular
   .module('skiprope')
-  .controller('libraryCtrl', libraryCtrl);
+  .controller('artistCtrl', artistCtrl);
 })();
 
     

@@ -17,6 +17,9 @@
     },
     "globals": {
         "angular",
-        "apiBaseRoute"
+        "userServiceApiBasePath",
+        "profileServiceApiBasePath",
+        "songServiceApiBasePath",
+        "libraryServiceApiBasePath"
     }
 } 

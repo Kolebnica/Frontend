@@ -35,6 +35,16 @@
         controller: 'libraryCtrl',
         controllerAs: 'vm'
       })
+      .when('/album/:albumId', {
+        templateUrl: 'components/album/album.view.html',
+        controller: 'albumCtrl',
+        controllerAs: 'vm'
+      })
+      .when('/artist/:artistId', {
+        templateUrl: 'components/artist/artist.view.html',
+        controller: 'artistCtrl',
+        controllerAs: 'vm'
+      })
       .otherwise({redirectTo: '/'});
 
     $locationProvider.html5Mode(true);
