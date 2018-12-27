@@ -4,5 +4,58 @@
 <div class="container-fluid" style="background: url('/public/img/funky-lines.png'); height: 100%;">
   <div class="container library" style="background: white; border-left: 1px solid rgba(0,0,0,0.1); border-right: 1px solid rgba(0,0,0,0.1); min-height: 100vh; height: 100%">
 
+    <div class="row p-3" style="border-bottom: 1px dashed rgba(0,0,0,0.1);">
+      <div class="col-sm-3 pb-1 mt-auto" style="text-align: center;">
+        <img src="/public/img/icons/music-folder.png" alt="" style="height: 85px; padding: 10px;">
+      </div>
+      <div class="col-sm-6 pb-1 mt-auto">
+        <h1>{{ vm.album.title }}</h1>
+        <h5><small>{{ vm.album.artist.creativeName }}</small></h5>
+      </div>
+    </div>
+
+    <h3 class="pl-3 pt-3">About album</h3>
+
+    <div class="pl-3">
+      <div ng-show="vm.editMode">
+        <div class="p-3" style="border-bottom: 1px dashed rgba(0,0,0,0.1);">
+          <form>
+            <div class="form-group">
+              <label for="title">Title</label>
+              <input type="text" class="form-control" id="title" ng-model="vm.album.title" placeholder="">
+            </div>
+            <div class="form-group">
+              <label for="artist">Artist</label>
+              <select ng-model="vm.album.artist.id" class="form-control input-sm" ng-options="a.id as a.creativeName for a in vm.artists"></select>
+            </div>
+            <div class="form-group">
+              <label for="releaseyear">Release year</label>
+              <input type="number" class="form-control" id="releaseyear" ng-model="vm.album.releaseYear" placeholder="">
+            </div>
+            <div class="btn-group">
+              <button type="button" class="btn btn-success" ng-click="vm.saveEdit()">Save</button>
+              <button type="button" class="btn btn-danger" ng-click="vm.cancelEdit()">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div ng-hide="vm.editMode" class="about">
+        <div><span class="attr-title">Title</span><div class="attr-content">{{ vm.album.title }}</div></div>
+        <div><span class="attr-title">Artist</span><div class="attr-content"><a href="/artist/{{ vm.album.artist.id }}">{{ vm.album.artist.creativeName }}</a></div></div>
+        <div><span class="attr-title">Release year</span><div class="attr-content">{{ vm.album.releaseYear }}</div></div>
+        <button class="btn btn-info mt-2" ng-click="vm.startEdit()">Edit</button>
+      </div>
+    </div>
+
+    <h2 class="pl-3 pt-3">Songs in album</h2>
+    <div class="row p-3" style="border-bottom: 1px dashed rgba(0,0,0,0.1);">
+      <div class="col-md-4 p-2 tile-list" ng-repeat="song in vm.songs">
+        <a href="#">
+          <img src="/public/img/icons/music-note.png">
+          {{ song.title }}
+        </a>
+      </div>
+    </div>
+
   </div>
 </div>

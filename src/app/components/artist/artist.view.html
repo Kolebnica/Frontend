@@ -25,12 +25,12 @@
               <input type="text" class="form-control" id="creativeName" ng-model="vm.artist.creativeName" placeholder="">
             </div>
             <div class="form-group">
-              <label for="creativeName">Full name</label>
-              <input type="text" class="form-control" id="creativeName" ng-model="vm.artist.fullName" placeholder="">
+              <label for="fullName">Full name</label>
+              <input type="text" class="form-control" id="fullName" ng-model="vm.artist.fullName" placeholder="">
             </div>
             <div class="btn-group">
-              <button type="button" class="btn btn-success" ng-click="vm.editMode=!vm.editMode">Submit</button>
-              <button type="button" class="btn btn-danger" ng-click="vm.editMode=!vm.editMode">Cancel</button>
+              <button type="button" class="btn btn-success" ng-click="vm.saveEdit()">Save</button>
+              <button type="button" class="btn btn-danger" ng-click="vm.cancelEdit()">Cancel</button>
             </div>
           </form>
         </div>
@@ -38,7 +38,7 @@
       <div ng-hide="vm.editMode" class="about">
         <div><span class="attr-title">Creative name</span><div class="attr-content">{{ vm.artist.creativeName }}</div></div>
         <div><span class="attr-title">Full name</span><div class="attr-content">{{ vm.artist.fullName }}</div></div>
-        <button class="btn btn-info mt-2" ng-click="vm.editMode = !vm.editMode">Edit</button>
+        <button class="btn btn-info mt-2" ng-click="vm.startEdit()">Edit</button>
       </div>
     </div>
 

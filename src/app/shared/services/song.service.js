@@ -29,6 +29,10 @@
       return $http.get(songServiceApiBasePath + '/api/song/artist/' + artistId);
     };
 
+    var getSongsByAlbum = function(albumId) {
+      return $http.get(songServiceApiBasePath + '/api/song/album/' + albumId);
+    };
+
     var getSongsByUser = function (userId) {
       return $http.get(songServiceApiBasePath + '/api/song/user/' + userId);
     };
@@ -39,6 +43,7 @@
       getStream: getStream,
       getSongList: getSongList,
       getSongsByArtist: getSongsByArtist,
+      getSongsByAlbum: getSongsByAlbum,
       getSongsByUser: getSongsByUser
     };
   };
