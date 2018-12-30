@@ -9,6 +9,10 @@
       return $http.get(libraryServiceApiBasePath + '/api/artists');
     };
 
+    var getAlbums = function () {
+      return $http.get(libraryServiceApiBasePath + '/api/albums');
+    };
+
     var getAlbum = function (albumId) {
       return $http.get(libraryServiceApiBasePath + '/api/albums/' + albumId);
     };
@@ -40,6 +44,7 @@
       getArtist: getArtist,
       getArtists: getArtists,
       getAlbum: getAlbum,
+      getAlbums: getAlbums,
       updateArtist: updateArtist,
       updateAlbum: updateAlbum,
     };

@@ -41,7 +41,7 @@
     <h2 class="pl-3 pt-3">Songs</h2>
     <div class="row p-3" style="border-bottom: 1px dashed rgba(0,0,0,0.1);">
       <div class="col-md-4 p-2 tile-list" ng-repeat="song in vm.songs">
-        <a href="#">
+        <a href="" ng-click="vm.openSongDataModal(song.id)">
           <img src="/public/img/icons/music-note.png">
           {{ song.title }}
         </a>
@@ -50,3 +50,5 @@
 
   </div>
 </div>
+
+<sr-song-data-modal></sr-song-data-modal>

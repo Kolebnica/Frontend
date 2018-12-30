@@ -8,6 +8,12 @@
       // TODO: redirect
     }
 
+    vm.openSongDataModal = function(songId) {
+      var modal = $('#songDataModal');
+      modal.data('songid', songId);
+      modal.modal('show');
+    };
+
     libraryService.getArtistsByUser(userId).then(
       function success(response) {
         vm.artists = response.data;

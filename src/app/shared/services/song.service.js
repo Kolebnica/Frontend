@@ -25,11 +25,19 @@
       return $http.get(songServiceApiBasePath + '/api/song/list');
     };
 
+    var getSong = function (songId) {
+      return $http.get(songServiceApiBasePath + '/api/song/' + songId);
+    };
+
+    var updateSong = function (songObj) {
+      return $http.put(songServiceApiBasePath + '/api/song/' + songObj.id, songObj);
+    };
+
     var getSongsByArtist = function (artistId) {
       return $http.get(songServiceApiBasePath + '/api/song/artist/' + artistId);
     };
 
-    var getSongsByAlbum = function(albumId) {
+    var getSongsByAlbum = function (albumId) {
       return $http.get(songServiceApiBasePath + '/api/song/album/' + albumId);
     };
 
@@ -42,6 +50,8 @@
       postSong: postSong,
       getStream: getStream,
       getSongList: getSongList,
+      getSong: getSong,
+      updateSong: updateSong,
       getSongsByArtist: getSongsByArtist,
       getSongsByAlbum: getSongsByAlbum,
       getSongsByUser: getSongsByUser
