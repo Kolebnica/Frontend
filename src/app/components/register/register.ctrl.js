@@ -15,7 +15,7 @@ var registerCtrl = function($scope, registerService, $location, $window){
                 $window.localStorage['name'] = response.data.name;
                 $window.localStorage['surname'] = response.data.surname;
                 $window.localStorage['userId'] = response.data.id;
-                $location.path("/");
+                $location.path("/profile/"+response.data.id);
             },
             function error(error){
                 $window.localStorage['logedIn'] = false;

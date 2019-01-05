@@ -33,14 +33,14 @@
 
         <div class="form-group">
           <label for="title">Artist</label>
-          <input type="text" class="form-control" id="title" placeholder="Los Del Rio" ng-model="vm.artist">
-          <small class="form-text text-muted"></small>
+          <select class="custom-select" name="singleSelectArtist" id="singleSelectArtist" ng-model="vm.selectedArtist" ng-options="artist.creativeName for artist in vm.artists">
+            </select><br>
         </div>
 
         <div class="form-group">
           <label for="title">Album</label>
-          <input type="text" class="form-control" id="title" placeholder="A mí me gusta" ng-model="vm.album">
-          <small class="form-text text-muted"></small>
+          <select class="custom-select" name="singleSelectAlbum" id="singleSelectAlbum" ng-model="vm.selectedAlbum" ng-options="album.title for album in vm.albums">
+          </select><br>
         </div>
 
         <button type="submit" class="btn btn-primary px-5 py-3 pull-right" style="border-radius: 35px;">Upload</button>

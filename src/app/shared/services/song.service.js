@@ -6,13 +6,13 @@
       return $http.post(songServiceApiBasePath + '/api/stream', fileData, {headers : {'Content-Type' : 'application/octet-stream'}});
     };
 
-    var postSong = function(title, streamId, userId){
+    var postSong = function(title, streamId, userId, artistId, albumId){
       var song = {
         title: title,
         stream_id: streamId,
         user_id: userId,
-        artist_id: null,
-        album_id: 0,
+        artist_id: artistId,
+        album_id: albumId,
       };
       return $http.post(songServiceApiBasePath + '/api/song', song);
     };
