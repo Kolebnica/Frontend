@@ -25,11 +25,15 @@
 
       <ul class="navbar-nav mr-right" ng-show="vm.logedIn">
         <li class="nav-item">
-          <a class="nav-link" href="/profile/6">
+          <a class="nav-link" href="/profile/{{ vm.userId }}">
             {{ vm.name }} {{ vm.surname }}
-            <img class="ml-3 d-inline-block profile-picture" src="../public/img/profiles/{{ vm.profilePictureNum }}.png" alt="">
-          </a>
-          
+            <img class="d-inline-block profile-picture" src="../public/img/profiles/{{ vm.profilePictureNum }}.png" alt="">
+          </a>  
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/library">
+            My library
+          </a>  
         </li>
         <li class="nav-item">
           <a href="" class="nav-link" ng-click="vm.logout()">

@@ -2,32 +2,21 @@
 <sr-navbar></sr-navbar>
 
 <div class="container-fluid" style="background: url('/public/img/funky-lines.png'); height: 100%;">
-  <div class="container library" style="background: white; border-left: 1px solid rgba(0,0,0,0.1); border-right: 1px solid rgba(0,0,0,0.1); min-height: 100vh; height: 100%">
+  <div class="container library">
    
-    <h1 class="p-3 pt-4 pb-4" style="border-bottom: 1px dashed rgba(0,0,0,0.1);">My library</h1>
-    
-    <h2 class="pl-3 pt-3">Artists</h2>
-    <div class="row p-3" style="border-bottom: 1px dashed rgba(0,0,0,0.1);">     
-        <div class="col-md-4 p-2 tile-list" ng-repeat="artist in vm.artists">
-          <a href="/artist/{{ artist.id }}">
-            <img src="/public/img/icons/microphone.png">
-            {{ artist.creativeName }}
-          </a>
-        </div>
-        <div class="col-md-4 p-2 tile-list">
-          <a href="/artist/new">
-            <img src="/public/img/icons/plus.png">
-            Add new artist...
-          </a>
-        </div>
-    </div>
-    
-    <h2 class="pl-3 pt-3">Albums</h2>
-    <div class="row p-3" style="border-bottom: 1px dashed rgba(0,0,0,0.1);">     
-      <div class="col-md-4 p-2 tile-list" ng-repeat="album in vm.albums">
-        <a href="/album/{{ album.id }}">
-          <img src="/public/img/icons/music-folder.png">
-          {{ album.title }}
+    <h1 class="p-3 pt-4 pb-2" style="">My library</h1>
+    <span style="color: #454545; font-size: 1.1em; " class="pl-3 pt-3">Create something new...</span>    
+    <div class="row p-3" style="border-bottom: 1px dashed rgba(0,0,0,0.1);">
+      <div class="col-md-4 p-2 tile-list">
+        <a href="/upload">
+          <img src="/public/img/icons/upload.png">
+          Upload a song
+        </a>
+      </div>
+      <div class="col-md-4 p-2 tile-list">
+        <a href="/artist/new">
+          <img src="/public/img/icons/plus.png">
+          Add new artist...
         </a>
       </div>
       <div class="col-md-4 p-2 tile-list">
@@ -38,7 +27,30 @@
       </div>
     </div>
 
+    <h2 class="pl-3 pt-3">Artists</h2>
+    <span style="color: #454545; font-size: 1.1em; " class="pl-3 pt-3">Artist you've created.</span>    
+    <div class="row p-3" style="border-bottom: 1px dashed rgba(0,0,0,0.1);">     
+        <div class="col-md-4 p-2 tile-list" ng-repeat="artist in vm.artists">
+          <a href="/artist/{{ artist.id }}">
+            <img src="/public/img/icons/microphone.png">
+            {{ artist.creativeName }}
+          </a>
+        </div>
+    </div>
+    
+    <h2 class="pl-3 pt-3">Albums</h2>
+    <span style="color: #454545; font-size: 1.1em; " class="pl-3 pt-3">Albums you've created.</span>    
+    <div class="row p-3" style="border-bottom: 1px dashed rgba(0,0,0,0.1);">     
+      <div class="col-md-4 p-2 tile-list" ng-repeat="album in vm.albums">
+        <a href="/album/{{ album.id }}">
+          <img src="/public/img/icons/music-folder.png">
+          {{ album.title }}
+        </a>
+      </div>
+    </div>
+
     <h2 class="pl-3 pt-3">Songs</h2>
+    <span style="color: #454545; font-size: 1.1em; " class="pl-3 pt-3">Your uploaded songs.</span>    
     <div class="row p-3" style="border-bottom: 1px dashed rgba(0,0,0,0.1);">
       <div class="col-md-4 p-2 tile-list" ng-repeat="song in vm.songs">
         <a href="" ng-click="vm.openSongDataModal(song.id)">

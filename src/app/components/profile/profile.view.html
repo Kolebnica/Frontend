@@ -2,7 +2,7 @@
 <sr-navbar></sr-navbar>
 
 <div class="container-fluid" style="background: url('../public/img/funky-lines.png'); height: 100%;">
-  <div class="container" style="background: white; border-left: 1px solid rgba(0,0,0,0.1); border-right: 1px solid rgba(0,0,0,0.1); height: 100%">
+  <div class="container library">
     <div class="row p-3" style="border-bottom: 1px dashed rgba(0,0,0,0.1);">
       <div class="col-sm-3 pb-1 mt-auto" style="text-align: center;">
         <img src="../public/img/profiles/{{ vm.user.id % 10 }}.png" alt="" style="height: 85px; padding: 10px;">
@@ -12,30 +12,24 @@
         <h5><small>{{ vm.user.username }}</small></h5>
       </div>
       <div class="col-sm-3 pb-1 mt-auto">
-        <a class="nav-link" href="/upload">
-          <img class="ml-3 d-inline-block profile-picture pull-right" src="../public/img/upload.png" alt="avatar" style="width:30%;">
-        </a>
       </div>
     </div>
-    <div class="row p-3" style="height: 100%; min-height: 100vh;">
-      <div class="col-md-6"><div class="p-2 m-2">
-        hehe xd
-      </div></div>
-      <div class="col-md-6"><div class="p-2 m-2">
-        hehe xd
-      </div></div>
-      <div class="col-md-6"><div class="p-2 m-2">
-        hehe xd
-      </div></div>
-      <div class="col-md-6"><div class="p-2 m-2">
-        hehe xd
-      </div></div>
-      <div class="col-md-6"><div class="p-2 m-2">
-        hehe xd
-      </div></div>
-      <div class="col-md-6"><div class="p-2 m-2">
-        hehe xd
-      </div></div>
+    <div class="row p-3">
+      
+      <div class="col-md-12" ng-repeat="playlist in vm.profile.playlists">
+        <div class="p-2 m-2">
+          <h4>{{ playlist.title }}</h4>
+          <p>{{ playlist.description }}</p>
+          <div class="row">
+            <div class="col-md-4 p-2 tile-list" ng-repeat="ps in playlist.playlistSongs">
+              <a href="" ng-click="vm.openSongDataModal(ps.song.id)">
+                <img src="/public/img/icons/music-note.png">
+                {{ ps.song.title }}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
       
     </div>
   </div>
