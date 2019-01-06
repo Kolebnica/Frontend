@@ -1,8 +1,8 @@
 (function() {
-  var libraryCtrl = function(libraryService, songService) {
+  var libraryCtrl = function($window, libraryService, songService) {
     var vm = this;
     
-    var userId = 2;
+    var userId = $window.localStorage['userId'];
     
     if (userId == undefined) {
       // TODO: redirect
