@@ -45,6 +45,10 @@
       return $http.get(songServiceApiBasePath + '/api/song/user/' + userId);
     };
 
+    var getSongsData = function (songTitle) {
+      return $http.get(songServiceApiBasePath + '/api/lyrics?q=' + songTitle);
+    };
+
     return {
       uploadStream: uploadStream,
       postSong: postSong,
@@ -54,7 +58,8 @@
       updateSong: updateSong,
       getSongsByArtist: getSongsByArtist,
       getSongsByAlbum: getSongsByAlbum,
-      getSongsByUser: getSongsByUser
+      getSongsByUser: getSongsByUser,
+      getSongsData: getSongsData
     };
   };
 

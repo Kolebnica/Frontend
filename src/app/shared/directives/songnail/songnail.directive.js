@@ -7,7 +7,9 @@
        title: '=',
        streamid: '=',
        album: '=',
-       artist: '='
+       artist: '=',
+       thumbnail: '=',
+       youtube: '='
       },
       controller: "songnailCtrl",
       controllerAs:'vm',

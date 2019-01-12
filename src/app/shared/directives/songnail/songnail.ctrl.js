@@ -1,9 +1,11 @@
 (function() {
-  var songnailCtrl = function($scope, songService) {
+  var songnailCtrl = function($scope, $window, songService) {
     var vm = this;
     vm.songTitle = $scope.title
     vm.songArtist = $scope.artist
     vm.songAlbum = $scope.album
+    vm.thumbnail = "../public/img/icons/music.png"
+    vm.hasYoutube = false
 
     init();
 		var context;    // Audio context
@@ -45,7 +47,7 @@
 
       context = new AudioContext();
     }
-    
+
     vm.playMusic = function () {
       vm.progress = "0%"
       vm.enablePause = true;
@@ -116,7 +118,35 @@
       pausedAt = Date.now() - startedAt;
       paused = true;
       vm.enablePause = false;
-  }
+    }
+
+    vm.getData = function(){
+      title = vm.songTitle
+      console.log("Bom naredil response za: ", title)
+      songService.getSongsData(title).then(
+        function success(response){
+          console.log("imam response: ",response, " za ",title)
+          if(response.data != ""){
+            console.log(response.data.result[0])
+            data = response.data.result[0]
+            if(data != "off"){
+              vm.thumbnail = data.thumbnails.standard
+              vm.youtube = "https://www.youtube.com/watch?v="+data.ytVideo
+              vm.hasYoutube = true
+              console.log("sem prikazal podatke")
+            }
+          }
+          console.log("Nimam podatkov")
+        },
+        function error(error){
+          console.log("Error: ",error)
+        }
+      )
+    }
+
+    vm.visitYoutube = function(){
+      $window.open(vm.youtube, '_blank');
+    }
   };
 
   angular

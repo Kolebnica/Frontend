@@ -1,15 +1,15 @@
-<div class="row my-2" style="border: 1px solid rgba(0,0,0,0.1); border-radius: 100px">
+<div ng-click="vm.getData()" class="row my-2" style="border: 1px solid rgba(0,0,0,0.1); border-radius: 100px">
   <div class="col-sm-2 p-2">
-    <img src="../public/img/icons/music.png" style="height:85px" alt="songnail_picture">
+    <img ng-src="{{vm.thumbnail}}" style="height:85px;border-radius:30px;" alt="songnail_picture">
   </div>
-  <div class="col-sm-2 text-left p-3" style="height: 100%;">
+  <div class="col-sm-3 text-left p-3" style="height: 100%;">
     <span style="font-size: 1.3em;font-weight: bold">{{vm.songTitle}}</span>
     <br/>
     <span style="font-size: 1em">{{vm.songAlbum}}</span>
     <br/>
     <span style="font-size: 1em">{{vm.songArtist}}</span>
   </div>
-  <div class="col-sm-5">
+  <div class="col-sm-4">
     <!--<div style="height:100%; display:flex;justify-content:center;align-items:center;">-->
       <!--<div style="width:100%; border: 1px solid orange;"></div>-->
       <div style="height:100%;display:flex;justify-content:center;align-items:center;">
@@ -21,7 +21,7 @@
   </div>
   <div class="col-sm-3 p-3">
     <div style="height:100%; display:flex;justify-content:center;align-items:center;">
-        <img src="../public/img/icons/star_yes.png" style="height: 42px;" alt="favorite">
+        <img ng-show="vm.hasYoutube" src="../public/img/icons/youtube.png" style="height:42px;margin-left:-42px;cursor: pointer;" alt="favorite" ng-click="vm.visitYoutube()">
         <div class="mx-3" style="height: 100%; border-right: 1px solid rgba(0,0,0,0.1);"></div>
         <img src="../public/img/icons/play.png" ng-class="!vm.enablePause? 'play-button' : ''" style="height: 42px;" alt="play" ng-click="vm.playMusic()">
         <img src="../public/img/icons/pause.png" ng-class="vm.enablePause? 'pause-button' : ''" style="height: 42px;" alt="pause" ng-click="vm.pauseMusic()">

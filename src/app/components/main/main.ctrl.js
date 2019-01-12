@@ -12,8 +12,8 @@
 			function error(error){
 				vm.songList = []
 				console.log(error);
-	})
-		
+			}
+		)
 	};
 
 angular
